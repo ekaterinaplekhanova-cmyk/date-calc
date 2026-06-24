@@ -182,8 +182,27 @@
         }
         .row input[type="date"],
         .row input[type="number"] {
+            flex: 1;
             min-width: 0;
             width: 100%;
+        }
+        .dates-pair {
+            display: flex;
+            gap: 15px;
+            align-items: stretch;
+            margin-bottom: 18px;
+        }
+        .dates-pair .form-group {
+            flex: 1;
+            min-width: 0;
+            margin-bottom: 0;
+        }
+        input[type="date"] {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        input[type="date"]::-webkit-date-and-time-value {
+            text-align: left;
         }
         .btn {
             width: 100%;
@@ -245,7 +264,7 @@
         }
 
         /* Адаптация под маленькие экраны iPhone */
-        @media (max-width: 480px) {
+        @media (max-width: 700px) {
             body {
                 padding: 10px;
             }
@@ -266,23 +285,38 @@
                 padding: 10px;
                 font-size: 14px;
             }
-            .row {
+            .dates-pair {
                 flex-direction: column;
+                gap: 18px;
+            }
+            .row {
                 gap: 10px;
-                align-items: stretch;
             }
             input[type="date"], input[type="number"] {
                 padding: 10px;
-                font-size: 14px;
+                font-size: 16px;
             }
             .today-btn {
-                width: 100%;
-                padding: 10px;
-                font-size: 14px;
+                padding: 10px 12px;
+                font-size: 13px;
             }
             .result {
                 font-size: 16px;
                 padding: 14px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 18px;
+            }
+            .today-btn {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            .tab {
+                min-width: 100px;
+                font-size: 12px;
             }
         }
     </style>
@@ -320,17 +354,17 @@
 
         <!-- Режим 2: разница между датами -->
         <div id="diff" class="mode-content">
-            <div class="row">
+            <div class="dates-pair">
                 <div class="form-group">
                     <label for="diff-date1">Первая дата</label>
-                    <div class="row">
+                    <div class="row date-row">
                         <input type="date" id="diff-date1">
                         <button class="today-btn" onclick="setToday('diff-date1')">Сегодня</button>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="diff-date2">Вторая дата</label>
-                    <div class="row">
+                    <div class="row date-row">
                         <input type="date" id="diff-date2">
                         <button class="today-btn" onclick="setToday('diff-date2')">Сегодня</button>
                     </div>
