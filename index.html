@@ -78,18 +78,35 @@
             margin-top: 30px;
             transition: background 0.3s ease, box-shadow 0.3s ease;
         }
-        .header {
+.header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 10px;
             gap: 10px;
+            position: relative;
         }
         .header h1 {
             flex: 1;
             text-align: center;
             color: var(--text-primary);
             margin: 0;
+        }
+        .logo {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            flex: 0 0 auto;
+        }
+        .logo-mobile {
+            display: none;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .logo-mobile img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
         }
         .theme-toggle {
             background: var(--theme-btn-bg);
@@ -279,6 +296,12 @@
             .header h1 {
                 font-size: 22px;
             }
+            .logo {
+                display: none;
+            }
+            .logo-mobile {
+                display: block;
+            }
             .theme-toggle {
                 padding: 8px 10px;
                 font-size: 18px;
@@ -327,8 +350,12 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo-mobile">
+            <img src="logo.png" alt="Ингеком">
+        </div>
         <div class="header">
-            <h1>📅 Калькулятор дат</h1>
+            <img src="logo.png" alt="Ингеком" class="logo">
+            <h1>Калькулятор дат</h1>
             <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Переключить тему">🌙</button>
         </div>
         <p class="subtitle">Быстро считайте даты без установки программ</p>
