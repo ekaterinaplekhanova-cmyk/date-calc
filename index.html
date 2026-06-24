@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#667eea">
+    <meta name="theme-color" content="#0f172a">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -174,9 +174,16 @@
             display: flex;
             gap: 15px;
             align-items: flex-end;
+            min-width: 0;
         }
         .row .form-group {
             flex: 1;
+            min-width: 0;
+        }
+        .row input[type="date"],
+        .row input[type="number"] {
+            min-width: 0;
+            width: 100%;
         }
         .btn {
             width: 100%;
@@ -248,7 +255,7 @@
                 border-radius: 12px;
             }
             .header h1 {
-                font-size: 24px;
+                font-size: 22px;
             }
             .theme-toggle {
                 padding: 8px 10px;
@@ -264,8 +271,14 @@
                 gap: 10px;
                 align-items: stretch;
             }
+            input[type="date"], input[type="number"] {
+                padding: 10px;
+                font-size: 14px;
+            }
             .today-btn {
                 width: 100%;
+                padding: 10px;
+                font-size: 14px;
             }
             .result {
                 font-size: 16px;
