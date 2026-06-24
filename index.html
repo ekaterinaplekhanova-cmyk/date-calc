@@ -170,7 +170,7 @@
             outline: none;
             border-color: var(--accent);
         }
-        .row {
+.row {
             display: flex;
             gap: 15px;
             align-items: flex-end;
@@ -182,9 +182,14 @@
         }
         .row input[type="date"],
         .row input[type="number"] {
-            flex: 1;
+            flex: 1 1 auto;
             min-width: 0;
             width: 100%;
+        }
+        .row input[type="date"] {
+            -webkit-appearance: none;
+            appearance: none;
+            min-width: 130px;
         }
         .dates-pair {
             display: flex;
@@ -196,10 +201,6 @@
             flex: 1;
             min-width: 0;
             margin-bottom: 0;
-        }
-        input[type="date"] {
-            -webkit-appearance: none;
-            appearance: none;
         }
         input[type="date"]::-webkit-date-and-time-value {
             text-align: left;
@@ -257,6 +258,7 @@
             font-weight: 600;
             white-space: nowrap;
             transition: background 0.2s;
+            flex: 0 0 auto;
         }
         .today-btn:hover {
             background: var(--accent);
@@ -295,6 +297,7 @@
             input[type="date"], input[type="number"] {
                 padding: 10px;
                 font-size: 16px;
+                min-width: 130px;
             }
             .today-btn {
                 padding: 10px 12px;
