@@ -158,6 +158,7 @@
         }
         input[type="date"], input[type="number"] {
             width: 100%;
+            min-width: 160px;
             padding: 12px;
             border: 2px solid var(--input-border);
             border-radius: 8px;
@@ -183,13 +184,13 @@
         .row input[type="date"],
         .row input[type="number"] {
             flex: 1 1 auto;
-            min-width: 0;
+            min-width: 160px;
             width: 100%;
         }
-        .row input[type="date"] {
-            -webkit-appearance: none;
-            appearance: none;
-            min-width: 130px;
+        .row input[type="date"]:empty,
+        .row input[type="date"]:placeholder-shown,
+        .row input[type="date"]:not(:valid) {
+            min-width: 160px;
         }
         .dates-pair {
             display: flex;
